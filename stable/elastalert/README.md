@@ -75,6 +75,7 @@ The command removes all the Kubernetes components associated with the chart and 
 | `extraVolumeMounts`               | Additional volumeMount definitions                                                         | []                              |
 | `resources`                       | Container resource requests and limits                                                     | {}                              |
 | `rules`                           | Rule and alert configuration for Elastalert                                                | {} example shown in values.yaml |
+| `externalRulesFiles.enabled`      | Pull rules from external yaml files located in rules/** path                               | False                           |
 | `runIntervalMins`                 | Default interval between alert checks, in minutes                                          | 1                               |
 | `realertIntervalMins`             | Time between alarms for same rule, in minutes                                              | `NULL`                          |
 | `alertRetryLimitMins`             | Time to retry failed alert deliveries, in minutes                                          | 2880 (2 days)                   |
