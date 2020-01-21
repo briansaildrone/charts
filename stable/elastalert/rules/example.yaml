@@ -1,0 +1,31 @@
+deadman_slack: |-
+  ---
+  name: Deadman Switch Slack
+  type: frequency
+  index: containers-*
+  num_events: 3
+  timeframe:
+    minutes: 3
+  filter:
+  - term:
+      message: "deadmanslack"
+  alert:
+  - "slack"
+  slack:
+  slack_webhook_url: dummy
+deadman_pagerduty: |-
+  ---
+  name: Deadman Switch PagerDuty
+  type: frequency
+  index: containers-*
+  num_events: 3
+  timeframe:
+    minutes: 3
+  filter:
+  - term:
+      message: "deadmanpd"
+  alert:
+  - "pagerduty"
+  pagerduty:
+  pagerduty_service_key: dummy
+  pagerduty_client_name: Elastalert Deadman Switch

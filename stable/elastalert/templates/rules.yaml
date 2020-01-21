@@ -12,3 +12,8 @@ data:
 {{ $key | indent 2}}: |-
 {{ $value | indent 4}}
 {{- end }}
+{{- if .Values.externalRulesFiles.enabled }}
+  {{- range $path, $_ := .Files.Glob "rules/**.yaml" }}
+{{ $.Files.Get $path | indent 2 }}
+  {{- end }}
+{{- end }}
